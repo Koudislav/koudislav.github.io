@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet"><title>Pravidla</title>
+</head>
+<body>
+<h1>Pravidla</h1>
+<h2>Hodnosti na webu</h2>
+<h3>Hodnosti a jejich zákonitosti</h3>
+<p>Základních uživatelských hodností na tomto webu je 5. Každý registrovaný uživatel automaticky získá hodnost HODNOST1. Může být povýšen při splnění nějakých podmínek, může být degradován.</p>
+<h3>Hodnosti a jak je získat</h3>
+<ol>
+    <li>HODNOST1</li>
+        <ul>
+        <li>Tuto hodnost získá automaticky každý registrovaný uživatel.</li>
+        <li>S touto hodností můžeš prohlížet obsah webu, máš přístup do chatu a na fórum, můžeš nakupovat videa a tvořit si seznamy oblíbených.</li>
+     </ul>
+
+    <li>HODNOST2 (50% zisk)</li>
+        <ul>
+        <li>HODNOST2 lze získat po nahrání a schválení prvního videa (video musí splňovat podmínky uvedené níže).</li>
+        <li>Díky této hodnosti můžeš začít sbírat BODY. Tvé video bude ohodnoceno částkou podle pravidel. Ty z každého jeho zakoupení dostaneš podíl BODŮ. Tento podíl můžeš zvýšit postoupením na vyšší hodnost.</li>
+        <li>Za body si můžeš nakupovat videa na tomto webu, poslat jinému uživateli jako poděkování, motivaci, nebo si je můžeš převést na peníze a nechat poslat na účet.</li>
+        <li>Při pořízení videa za BODY navíc získáváš 2% slevu.</li>
+        </ul>
+
+    <li>HODNOST3 (65% zisk)</li>
+        <ul>
+        <li>HODNOST3 získáš, pokud nahraješ na server třetí video.</li>
+        <li>Díky této hodnosti získáváš více bodů z prodeje tvých videí.</li>
+        <li>Zároveň získáváš 4% slevu na pořízení videí na webu za BODY.</li>
+        </ul>
+    <li>HODNOST4 (75% zisk)</li>
+        <ul>
+        <li>Tuto hodnost získá uživatel, který nahrává pravidelně kvalitní obsah. To znamená:
+            <ol>
+                <li>Minimálně 3 videa měsíčně alespoň 2 měsíce v kuse.</li>
+                <li>Videa jsou minimálně ve fullHD rozlišení (1080p).</li>
+                <li>Pokud podmínka 3 videí měsíčně přestane být plněna, uživatel dostane upozornění a po několika dnech bude hodnost snížena na předchozí úroveň.</li>
+            </ol>
+        </li>
+        <li>Vyšší bodový zisk z prodeje.</li>
+        <li>Sleva 7&nbsp;% na nákup videí za body.</li>
+        </ul>
+    <li>HODNOST5 (85% zisk)</li>
+    <ul>
+        <li>Tuto hodnost přiděluje administrátor. Nemá cenu si o ni psát.</li>
+        <li>Nejvyšší možný zisk bodů.</li>
+        <li>Sleva 10&nbsp;% na nákup za body.</li>
+    </ul>
+</ol>
+
+<h2>Zpoplatnění obsahu</h2>
+<h3>Jak se vypočítá cena vašeho videa</h3>
+<p>Cena každého videa se odvíjí od základní maximální ceny na tomto webu. Ta je nyní 100,-&nbsp;Kč. Od této částky se odečítají cifry při nesplnění maximálních standardů.</p>
+<ol>
+    <li>Podle kvality:</li>
+    <ul>
+        <li>1080p (fullHD) - 0 (neodečítá se nic)</li>
+        <li>720p (HD) - 10,-&nbsp;Kč</li>
+        <li>540p (qHD) - 40,-&nbsp;Kč</li>
+        <li>Nižší kvalita nebude na webu schválena</li>
+    </ul>
+    <li>Podle délky</li>
+    <ul>
+        <li>Delší než 20 minut - 0 (neodečítá se nic)</li>
+        <li>10 - 20 minut - 10,-&nbsp;Kč</li>
+        <li>&nbsp;5 - 10 minut - 30,-&nbsp;Kč</li>
+        <li>Kratší než 5 minut - 100,-&nbsp;Kč (Video kratší než 5 minut je stále možné nahrát, ale bude zveřejněno zdarma pro všechny registrované uživatele. Je možné to brát jako promo, touto cestou si můžete dělat reklamu na váš kanál.</li>
+    </ul>
+</ol>
+<h2>Procentuální výnos bodů</h2>
+<h3>Kolik bodů vám bude připsáno na základě hodnosti</h3>
+<p>text</p>
+
+<div class="tabulka">
+<div class="nazev">Kvalita:</div>
+<div class="hodnota1" id="quality1">1080p (fHD)</div>
+<div class="hodnota1" id="quality2">720p (HD)</div>
+<div class="hodnota1" id="quality3">540p (qHD)</div>
+<div class="hodnota1" id="quality4">Nižší</div>
+<div class="nazev">Délka:</div>
+<div class="hodnota2" id="length1">Více než 20 min.</div>
+<div class="hodnota2" id="length2">10 až 20 min.</div>
+<div class="hodnota2" id="length3">5 až 10 min.</div>
+<div class="hodnota2" id="length4">Kratší</div>
+<div class="nazev">Hodnosti:</div>
+<div class="hodnota3" id="rank1">Hodnost 5</div>
+<div class="hodnota3" id="rank2">Hodnost 4</div>
+<div class="hodnota3" id="rank3">Hodnost 3</div>
+<div class="hodnota3" id="rank4">Hodnost 2</div>
+</div>
+<div class="result">
+    <div class="vypocet">Výpočet částky, za jakou se bude video prodávat:&nbsp;&nbsp;&nbsp;&nbsp;</div>
+    <div class="vypocet" id="startValue">100&nbsp;</div>
+    <div class="vypocet" id="qualityValue">&nbsp;</div>
+    <div class="vypocet" id="lengthValue">&nbsp;</div>  
+    <div class="vypocet">&nbsp;<b>=</b>&nbsp;</div>
+    <div class="vypocet" id="finalValue">100</div>
+    <div class="vypocet">&nbsp;<b>,-&nbsp;Kč</b></div>
+</div>
+<p>&nbsp;</p>
+<p id="warning">&nbsp;</p>
+
+<p>&nbsp;</p>
+<!--
+3 mesice - degradace
+1 rok - expirace
+80% max zisk krom VIP
+max 10% sleva
+5 hodnosti mimo VIP
+preposlat body - 10%
+Na webu je minimální povolená kvalita pro nahrávání videa 540p&nbsp;(qHD). Video v nižší kvalitě nebude schváleno.
+-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
