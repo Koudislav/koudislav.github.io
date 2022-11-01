@@ -31,7 +31,7 @@ function warning() {
   }}
 
 
-  //funkce pro vypocet ceny.
+  //funkce pro vypocet ceny - spusti vypocet bodu
 function qualityAndLengthResult() {
   calculatePrice = maxPrice - qualityResult - lengthResult;
   document.getElementById("finalValue").textContent = maxPrice + " - " + qualityResult + " - " + lengthResult + " = " + (calculatePrice) + ",- Kč";
@@ -39,11 +39,15 @@ function qualityAndLengthResult() {
   pointsResult();
 }
 
+ 
+//funkce pro výpočet bodů
 function pointsResult() {
   calculatePoints = calculatePrice / 100 * rankResult;
-  document.getElementById("pointsValue").textContent = rankResult + " % ze " + calculatePrice + " = " + (calculatePoints).toFixed(2) + "bodů";
-  
-}
+  if (calculatePrice <= 0) {
+  document.getElementById("pointsValue").textContent = rankResult + " % z " + calculatePrice + " = " + (calculatePoints).toFixed(1) + "bodů";
+ } else {
+  document.getElementById("pointsValue").textContent = rankResult + " % ze " + calculatePrice + " = " + (calculatePoints).toFixed(1) + "bodů";
+ }}
 
 
 //funkce pro kliknuti na radek kvality = ridi barvy a vyvola vypocet
@@ -76,7 +80,6 @@ function rankColor() {
     } else {
       document.getElementById("rank"+i).style.backgroundColor = "#353535";
       qualityAndLengthResult();
-      pointsResult();
     }}}      
 
 

@@ -58,7 +58,6 @@ background-color: #1b570f;
 font-size: 20px;
 }
 .vypocet {
-    float: left;
     margin-right: 10px;
 }
 
@@ -73,5 +72,5 @@ font-size: 20px;
 .result {
     margin: 20px;
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
 }
