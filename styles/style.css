@@ -59,9 +59,10 @@ font-size: 20px;
 }
 .vypocet {
     float: left;
+    margin-right: 10px;
 }
 
-#startValue, #qualityValue, #lengthValue, #finalValue {
+#finalValue, #pointsValue {
     font-weight: bold;
 }
 #warning {

@@ -3,21 +3,27 @@ let qualityResult = 0;
 let length = 0;
 let lengthResult = 0;
 let rank = 0;
-let rankResult = 0;
+let rankResult = 85;
 let warningQuality = " Pokud je kvalita videa nižší než 540p, nebude vůbec schváleno. ";
 let warningLength = " Pokud je video kratší než 5 minut, bude zveřejněno zdarma. ";
 let maxPrice = 100;
-let calculatePrice = 0;
+let calculatePrice = maxPrice;
+let calculatePoints = 0;
+document.getElementById("pointsValue").textContent = rankResult + " %";
+document.getElementById("finalValue").textContent = maxPrice + " = " + maxPrice + ",- Kč";
 
 //Varovani, pokud je cena 0 nebo nizsi, finalni castka nejde do minusu
-function varovani() {
+function warning() {
   if ((calculatePrice) <= 0 && quality == 4 && length == 4) {
+    calculatePrice = 0;
     document.getElementById("warning").textContent = warningQuality + warningLength;
     document.getElementById("finalValue").textContent = maxPrice + " - " + maxPrice + " = 0,- Kč";
   } else if ((calculatePrice) <= 0 && quality == 4) {
+    calculatePrice = 0;
     document.getElementById("warning").textContent = warningQuality;
     document.getElementById("finalValue").textContent = maxPrice + " - " + maxPrice + " = 0,- Kč";
   } else if ((calculatePrice) <= 0 && length == 4) {
+    calculatePrice = 0;
     document.getElementById("warning").textContent = warningLength;
     document.getElementById("finalValue").textContent = maxPrice + " - " + maxPrice + " = 0,- Kč";
   } else {
@@ -29,7 +35,14 @@ function varovani() {
 function qualityAndLengthResult() {
   calculatePrice = maxPrice - qualityResult - lengthResult;
   document.getElementById("finalValue").textContent = maxPrice + " - " + qualityResult + " - " + lengthResult + " = " + (calculatePrice) + ",- Kč";
-  varovani();
+  warning();
+  pointsResult();
+}
+
+function pointsResult() {
+  calculatePoints = calculatePrice / 100 * rankResult;
+  document.getElementById("pointsValue").textContent = rankResult + " % ze " + calculatePrice + " = " + (calculatePoints).toFixed(2) + "bodů";
+  
 }
 
 
@@ -55,13 +68,15 @@ function lengthColor() {
     }}}
 
 
-    //funkce pro kliknuti na radek hodnosti
+    //funkce pro kliknuti na radek hodnosti - spusti vypocet ceny, botom bodů.
 function rankColor() {
   for (let i = 1; i < 5; i++) {
     if (rank == i) {
     document.getElementById("rank"+i).style.backgroundColor = "#1b570f";
     } else {
       document.getElementById("rank"+i).style.backgroundColor = "#353535";
+      qualityAndLengthResult();
+      pointsResult();
     }}}      
 
 
