@@ -4,21 +4,35 @@ let length = 0;
 let lengthResult = 0;
 let rank = 0;
 let rankResult = 0;
+let warningQuality = " Pokud je kvalita videa nižší než 540p, nebude vůbec schváleno. ";
+let warningLength = " Pokud je video kratší než 5 minut, bude zveřejněno zdarma. ";
+let maxPrice = 100;
+let calculatePrice = 0;
+
 //Varovani, pokud je cena 0 nebo nizsi, finalni castka nejde do minusu
 function varovani() {
-  if (document.getElementById("finalValue").textContent <= 0) {
-    document.getElementById("warning").textContent = "Pokud je video kratší než 5 minut, bude zveřejněno zdarma. Pokud je kvalita videa nižší než 540p, nebude v;bec schváleno.";
-    document.getElementById("finalValue").textContent = "0"
+  if ((calculatePrice) <= 0 && quality == 4 && length == 4) {
+    document.getElementById("warning").textContent = warningQuality + warningLength;
+    document.getElementById("finalValue").textContent = maxPrice + " - " + maxPrice + " = 0,- Kč";
+  } else if ((calculatePrice) <= 0 && quality == 4) {
+    document.getElementById("warning").textContent = warningQuality;
+    document.getElementById("finalValue").textContent = maxPrice + " - " + maxPrice + " = 0,- Kč";
+  } else if ((calculatePrice) <= 0 && length == 4) {
+    document.getElementById("warning").textContent = warningLength;
+    document.getElementById("finalValue").textContent = maxPrice + " - " + maxPrice + " = 0,- Kč";
   } else {
     document.getElementById("warning").textContent = " ";
   }}
-//funkce pro vypocet ceny.
+
+
+  //funkce pro vypocet ceny.
 function qualityAndLengthResult() {
-  document.getElementById("qualityValue").textContent = " - " + qualityResult;
-  document.getElementById("lengthValue").textContent = " - " + lengthResult;
-  document.getElementById("finalValue").textContent = 100 - qualityResult - lengthResult;
+  calculatePrice = maxPrice - qualityResult - lengthResult;
+  document.getElementById("finalValue").textContent = maxPrice + " - " + qualityResult + " - " + lengthResult + " = " + (calculatePrice) + ",- Kč";
   varovani();
 }
+
+
 //funkce pro kliknuti na radek kvality = ridi barvy a vyvola vypocet
 function qualityColor() {
 for (let i = 1; i < 5; i++) {
@@ -27,16 +41,10 @@ for (let i = 1; i < 5; i++) {
   } else {
     document.getElementById("quality"+i).style.backgroundColor = "#353535";
     qualityAndLengthResult();
-    // document.getElementById("quality"+i).addEventListener("mouseover", function(){
-    //   document.getElementById("quality"+i).style.backgroundColor = "#1b570f";
-    //   });
-    //   document.getElementById("quality"+i).addEventListener("mouseout", function() {
-    //   document.getElementById("quality"+i).style.backgroundColor = "#353535";
-    //   });
-    // document.getElementById("qualityValue").textContent = " - " + qualityResult;
-    // document.getElementById("finalValue").textContent = 100 - qualityResult - lengthResult;
   }}}
-//funkce pro kliknuti na radek delky - ridi barvy a vyvola vypocet
+
+
+  //funkce pro kliknuti na radek delky - ridi barvy a vyvola vypocet
 function lengthColor() {
   for (let i = 1; i < 5; i++) {
     if (length == i) {
@@ -44,29 +52,19 @@ function lengthColor() {
     } else {
       document.getElementById("length"+i).style.backgroundColor = "#353535";
       qualityAndLengthResult();
-      // document.getElementById("length"+i).addEventListener("mouseover", function(){
-      //   document.getElementById("length"+i).style.backgroundColor = "#1b570f";
-      //   });
-      //   document.getElementById("length"+i).addEventListener("mouseout", function() {
-      //   document.getElementById("length"+i).style.backgroundColor = "#353535";
-      //   });
-    // document.getElementById("lengthValue").textContent = " - " + lengthResult;
-    // document.getElementById("finalValue").textContent = 100 - qualityResult - lengthResult;
     }}}
-//funkce pro kliknuti na radek hodnosti
+
+
+    //funkce pro kliknuti na radek hodnosti
 function rankColor() {
   for (let i = 1; i < 5; i++) {
     if (rank == i) {
     document.getElementById("rank"+i).style.backgroundColor = "#1b570f";
     } else {
       document.getElementById("rank"+i).style.backgroundColor = "#353535";
-      // document.getElementById("rank"+i).addEventListener("mouseover", function(){
-      //   document.getElementById("rank"+i).style.backgroundColor = "#1b570f";
-      //   });
-      //   document.getElementById("rank"+i).addEventListener("mouseout", function() {
-      //   document.getElementById("rank"+i).style.backgroundColor = "#353535";
-      //   });
     }}}      
+
+
     //Klikani radek s kvalitou
 document.getElementById("quality1").addEventListener("click",function () {
   quality = 1;
@@ -85,9 +83,11 @@ document.getElementById("quality3").addEventListener("click",function () {
 })
 document.getElementById("quality4").addEventListener("click",function () {
   quality = 4;
-  qualityResult = 100;
+  qualityResult = maxPrice;
   qualityColor()
 })
+
+
 //Klikani radek s delkou
 document.getElementById("length1").addEventListener("click",function () {
   length = 1;
@@ -106,9 +106,11 @@ document.getElementById("length3").addEventListener("click",function () {
 })
 document.getElementById("length4").addEventListener("click",function () {
   length = 4;
-  lengthResult = 100;
+  lengthResult = maxPrice;
   lengthColor()
 })
+
+
 //Klikani radek s hodnosti
 document.getElementById("rank1").addEventListener("click",function () {
   rank = 1;
@@ -130,36 +132,3 @@ document.getElementById("rank4").addEventListener("click",function () {
   rankResult = 50;
   rankColor()
 })
-
-
-// if (quality == 1) {
-//   document.querySelector("#quality1").style.backgroundColor = "#1b570f";
-//   } else if (quality == 2) {
-//     document.querySelector("#quality2").style.backgroundColor = "#1b570f";
-//   }
-
-
-//     $( '#quality1' ).css( "background-color", "#1b570f" );
-//     $( '#quality2, #quality3, #quality4' ).css( "background-color", "#353535" );
-// $( '#quality1' ).click(() => {
-//     quality = 0;
-//       $( '#quality1' ).css( "background-color", "#1b570f" );
-//       $( '#quality2, #quality3, #quality4' ).css( "background-color", "#353535" );
-      
-// });
-// $( '#quality2' ).click(() => {
-//     quality = -10;
-//       $( '#quality2' ).css( "background-color", "#1b570f" );
-//       $( '#quality1, #quality3, #quality4' ).css( "background-color", "#353535" );
-// });
-// $( '#quality3' ).click(() => {
-//     quality = -30;
-//       $( '#quality3' ).css( "background-color", "#1b570f" );
-//       $( '#quality1, #quality2, #quality4' ).css( "background-color", "#353535" );
-// });
-// $( '#quality4' ).click(() => {
-//     quality = -100;
-//       $( '#quality4' ).css( "background-color", "#1b570f" );
-//       $( '#quality1, #quality2, #quality3' ).css( "background-color", "#353535" );
-// });
-//
