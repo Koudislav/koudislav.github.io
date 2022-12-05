@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-12-05T20:09:13.384Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36" etag="0pDwo6SVamqtmQeN59BC" version="20.6.0" type="github">
+<mxfile host="app.diagrams.net" modified="2022-12-05T20:12:57.664Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36" etag="RmPNe7bYP7oMMZqvD3LD" version="20.6.0" type="github">
   <diagram id="RxRgk9gxCJusj9o6Y9pw" name="Stránka-1">
     <mxGraphModel dx="868" dy="526" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -91,7 +91,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="zqLznTKt4C3kLYdAVyAW-4" value="&lt;div style=&quot;box-sizing:border-box;width:100%;background:#e4e4e4;padding:2px;&quot;&gt;variables&lt;/div&gt;&lt;table style=&quot;width:100%;font-size:1em;&quot; cellpadding=&quot;2&quot; cellspacing=&quot;0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;PK&lt;/td&gt;&lt;td&gt;id&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;FK1&lt;/td&gt;&lt;td&gt;uzivatel_id&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;hodnost1&lt;br&gt;-&lt;br&gt;hodnost5&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;" vertex="1" parent="1">
-          <mxGeometry x="620" y="520" width="180" height="110" as="geometry" />
+          <mxGeometry x="40" y="510" width="180" height="110" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
